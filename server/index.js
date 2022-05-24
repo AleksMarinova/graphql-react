@@ -7,6 +7,8 @@ const userData = require("./MOCK_DATA.json")
 const graphql = require("graphql");
 const schema = require("./Schemas");
 
+app.use(cors());
+
 app.use('/graphql', graphqlHTTP({
     schema,
     graphiql: true
