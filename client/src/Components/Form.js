@@ -8,7 +8,7 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [createUser, { error }] = useMutation(CREATE_USER_MUTATION)
+  const [createUser, { error }] = useMutation(CREATE_USER_MUTATION);
 
   const addUser = () => {
     createUser({
@@ -18,22 +18,22 @@ const Form = () => {
         email: email,
         password: password,
       },
-    })
-    if(error){
-      console.log(error)
+    });
+    if (error) {
+      console.log(error);
     }
     console.log("User added");
-  }
+  };
 
   return (
     <div>
       <h1>Form</h1>
       <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        addUser();
-      }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          addUser();
+        }}
       >
         <input
           type="text"
@@ -63,7 +63,7 @@ const Form = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" >Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
